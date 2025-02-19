@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { JetBrains_Mono } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
@@ -16,10 +18,11 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const SocialIcon = ({ paths, href }) => (
+const SocialIcon = ({ paths, href }: { paths: string[]; href: string }) => (
   <a
     target='_blank'
-    className='focus:ring-offset-background group rounded focus:ring-offset-2 focus:ring-1 focus:ring-primary hover:text-primary'
+    rel='noopener noreferrer'
+    className='focus:ring-offset-background group rounded focus:ring-offset-2 focus:ring-1 focus:ring-primary hover:text-white'
     href={href}
   >
     <svg
@@ -32,9 +35,9 @@ const SocialIcon = ({ paths, href }) => (
       strokeLinecap='round'
       strokeLinejoin='round'
       stroke='currentColor'
-      className='size-7 transition-all hover:text-primary group-focus:text-primary'
+      className='size-7 transition-all hover:text-white group-focus:text-white'
     >
-      {paths.map((d, i) => (
+      {paths.map((d: string, i: number) => (
         <path key={i} d={d} stroke='currentColor' />
       ))}
     </svg>
@@ -60,7 +63,7 @@ export default function Home() {
               Science at the University of Virginia.
             </div>
             <div className='leading-tight text-center'>
-              Currently at Chordia AI. Previously at DocuSign.
+              Currently at Chordia AI. Previously at DocuSign, RedMatter.
             </div>
           </div>
 
@@ -68,12 +71,12 @@ export default function Home() {
           <div className='flex items-center gap-4 text-secondary'>
             <SocialIcon href='https://x.com/ronishdua' paths={SVG_PATHS.x} />
             <SocialIcon
-              href='https://github.com/ronishdua'
-              paths={SVG_PATHS.github}
-            />
-            <SocialIcon
               href='https://linkedin.com/in/ronishdua'
               paths={SVG_PATHS.linkedin}
+            />
+            <SocialIcon
+              href='https://github.com/ronishdua'
+              paths={SVG_PATHS.github}
             />
             <SocialIcon
               href='mailto:ronishdua@gmail.com'
@@ -85,7 +88,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className='fixed bottom-0 left-0 right-0 p-8 md:p-16'>
-        <div className='flex justify-end items-center text-sm text-gray-500'>
+        <div className='flex justify-center md:justify-end items-center text-sm text-gray-500'>
           <div className='flex items-center gap-2'>
             <span className='relative flex h-2 w-2'>
               <span className='absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-slow-ping'></span>
