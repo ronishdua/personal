@@ -3,8 +3,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "Ronish Dua - Personal Website",
-  description: "Computer Science Student and Software Engineer",
+  title: "Ronish Dua",
 };
 
 export default function RootLayout({
