@@ -42,7 +42,7 @@ const workExperience = [
     role: "Software Engineer Intern",
     description: "Built a cloud subscription tracker app cutting costs by 15%.",
     href: "https://www.redmattersolutions.com",
-    logo: "/images/RedMatter.png",
+    logo: "/images/redmatter.png",
   },
 ];
 
