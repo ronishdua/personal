@@ -1,9 +1,12 @@
+import { SVG_PATHS } from "./icons";
+
 export interface WorkExperience {
   company: string;
   role: string;
   description: string;
   href: string;
   logo: string;
+  dateRange: string;
 }
 
 export interface Project {
@@ -29,9 +32,10 @@ export const workExperience: WorkExperience[] = [
     company: "Chordia",
     role: "Software Engineer Intern",
     description:
-      "Building voice AI call analysis and knowledge base for 200+ agents",
+      "Building voice AI call analysis and knowledge base for 200+ agents.",
     href: "https://www.chordia.ai",
     logo: "/images/Chordia.svg",
+    dateRange: "Feb. 2025 - Present",
   },
   {
     company: "DocuSign",
@@ -40,19 +44,22 @@ export const workExperience: WorkExperience[] = [
       "Developed a Slack bot automating sandbox management for 80 devs.",
     href: "https://www.docusign.com",
     logo: "/images/DocuSign.png",
+    dateRange: "May 2024 - Aug. 2024",
   },
   {
     company: "RedMatter",
     role: "Software Engineer Intern",
-    description: "Built a cloud subscription tracker app cutting costs by 15%.",
+    description:
+      "Built a tracker to optimize cloud subscriptions reducing costs by 15%.",
     href: "https://www.redmattersolutions.com",
     logo: "/images/redmatter.png",
+    dateRange: "May 2023 - Aug. 2023",
   },
 ];
 
 export const projects: Project[] = [
   {
-    name: "Spacify (Acq.)",
+    name: "Spaceify (Acquired)",
     role: "Co-Founder",
     description:
       "Created an AI powered platform automating lease analysis, expense tracing, tenant management acquired after 4 months of development",
@@ -76,3 +83,10 @@ export const education: Education = {
 export const personalInfo = {
   name: "Ronish Dua",
 };
+
+export const socialLinks = [
+  { href: "https://x.com/ronishdua", paths: SVG_PATHS.x },
+  { href: "https://linkedin.com/in/ronishdua", paths: SVG_PATHS.linkedin },
+  { href: "https://github.com/ronishdua", paths: SVG_PATHS.github },
+  { href: "mailto:ronishdua@gmail.com", paths: SVG_PATHS.email },
+];

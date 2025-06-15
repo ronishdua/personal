@@ -2,7 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Typography styles from reference */
+h1 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+h3 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+
+p {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+
+a {
+  font-weight: 400;
+  text-decoration-line: underline;
+  text-decoration-color: #e5e5e5;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+a:has(img):hover {
+  opacity: 1 !important;
+}
+
 body {
-  color: rgb(255, 255, 255);
-  background: rgb(29, 32, 33);
+  color: #1b1b18;
+  background: #fdfdfc;
 }

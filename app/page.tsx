@@ -1,80 +1,70 @@
 "use client";
 
 import React from "react";
-import { JetBrains_Mono, Playfair_Display } from "next/font/google";
-import { SVG_PATHS } from "./constants/icons";
+import { Inter } from "next/font/google";
 import {
   workExperience,
   projects,
-  education,
   personalInfo,
+  socialLinks,
 } from "./constants/data";
 import {
   SocialIcon,
   WorkItem,
   ProjectItem,
   Section,
-  EducationItem,
-  animations,
 } from "./components/ResumeComponents";
-import "./styles/animations.css";
+import { BackgroundOverlay } from "./components/BackgroundOverlay";
+import { useVisitorLocation } from "./hooks/useVisitorLocation";
 
-const mono = JetBrains_Mono({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400"],
   display: "swap",
 });
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["italic"],
-  display: "swap",
-});
-
-const socialLinks = [
-  { href: "https://x.com/ronishdua", paths: SVG_PATHS.x },
-  { href: "https://linkedin.com/in/ronishdua", paths: SVG_PATHS.linkedin },
-  { href: "https://github.com/ronishdua", paths: SVG_PATHS.github },
-  { href: "mailto:ronishdua@gmail.com", paths: SVG_PATHS.email },
-];
 
 export default function Home() {
-  return (
-    <main
-      className={`min-h-screen bg-[#1d2021] text-gray-300 p-4 md:p-16 flex flex-col ${mono.className}`}
-    >
-      <div className='w-full max-w-2xl mx-auto'>
-        <div className='flex w-full flex-col items-start gap-12 pt-8'>
-          <h1
-            className={`${playfair.className} text-6xl font-extrabold mt-8 text-center md:text-left w-full md:w-auto ${animations.fadeInUp}`}
-          >
-            {personalInfo.name}
-          </h1>
+  const visitorLocation = useVisitorLocation();
 
-          <Section title='Work' delay={0.2}>
+  return (
+    <>
+      <BackgroundOverlay />
+
+      <main
+        className={`min-h-screen px-5 py-20 ${inter.className}`}
+        style={{ color: "#1b1b18", background: "#fdfdfc" }}
+      >
+        <div className='max-w-[500px] mx-auto flex flex-col gap-y-10'>
+          <h1>{personalInfo.name}</h1>
+
+          <p>I'm a software engineer based in Washington, D.C.</p>
+
+          <Section title='Experiences'>
             {workExperience.map((work, index) => (
               <WorkItem key={index} {...work} index={index} />
             ))}
           </Section>
 
-          <Section title='Play' delay={0.6}>
+          <Section title='Initiatives'>
             {projects.map((project, index) => (
               <ProjectItem key={index} {...project} index={index} />
             ))}
           </Section>
 
-          <Section title='Education' delay={1.0}>
-            <EducationItem {...education} delay='1.1s' />
+          <Section title='Connect'>
+            <footer className='flex items-center gap-x-4'>
+              {socialLinks.map((social, index) => (
+                <SocialIcon key={index} {...social} index={index} />
+              ))}
+            </footer>
           </Section>
 
-          <div className='flex items-center gap-4 text-secondary'>
-            {socialLinks.map((social, index) => (
-              <SocialIcon key={index} {...social} index={index} />
-            ))}
-          </div>
+          {visitorLocation && (
+            <p className='opacity-50 text-xs'>
+              Last Visitor from {visitorLocation}
+            </p>
+          )}
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
