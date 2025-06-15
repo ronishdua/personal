@@ -36,24 +36,24 @@ export default function Home() {
         <div className='max-w-[500px] mx-auto flex flex-col gap-y-10'>
           <h1>{personalInfo.name}</h1>
 
-          <p>I'm a software engineer based in Washington, D.C.</p>
+          <p>I&apos;m a software engineer based in Washington, D.C.</p>
 
           <Section title='Experiences'>
             {workExperience.map((work, index) => (
-              <WorkItem key={index} {...work} index={index} />
+              <WorkItem key={index} {...work} />
             ))}
           </Section>
 
           <Section title='Initiatives'>
             {projects.map((project, index) => (
-              <ProjectItem key={index} {...project} index={index} />
+              <ProjectItem key={index} {...project} />
             ))}
           </Section>
 
           <Section title='Connect'>
             <footer className='flex items-center gap-x-4'>
               {socialLinks.map((social, index) => (
-                <SocialIcon key={index} {...social} index={index} />
+                <SocialIcon key={index} {...social} />
               ))}
             </footer>
           </Section>

@@ -2,15 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { WorkExperience, Project, SocialLink } from "../constants/data";
 
-interface SocialIconProps extends SocialLink {
-  index: number;
-}
-
-export const SocialIcon: React.FC<SocialIconProps> = ({
-  paths,
-  href,
-  index,
-}) => (
+export const SocialIcon: React.FC<SocialLink> = ({ paths, href }) => (
   <a
     target='_blank'
     rel='noopener noreferrer'
@@ -36,7 +28,6 @@ export const SocialIcon: React.FC<SocialIconProps> = ({
 );
 
 interface WorkItemProps extends WorkExperience {
-  index: number;
   dateRange: string;
 }
 
@@ -44,9 +35,7 @@ export const WorkItem: React.FC<WorkItemProps> = ({
   company,
   role,
   description,
-  href,
   logo,
-  index,
   dateRange,
 }) => (
   <div className='mb-6'>
@@ -72,17 +61,7 @@ export const WorkItem: React.FC<WorkItemProps> = ({
   </div>
 );
 
-interface ProjectItemProps extends Project {
-  index: number;
-}
-
-export const ProjectItem: React.FC<ProjectItemProps> = ({
-  name,
-  role,
-  description,
-  href,
-  index,
-}) => (
+export const ProjectItem: React.FC<Project> = ({ name, role, description }) => (
   <div className='mb-6'>
     <h3>{name}</h3>
     <p className='mt-2 opacity-50 font-light'>{role}</p>
