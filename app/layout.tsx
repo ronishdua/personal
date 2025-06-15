@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: "Ronish Dua",
   description: "Software engineer based in Washington, D.C.",
   icons: {
-    icon: "/tabLogo.png",
-    shortcut: "/tabLogo.png",
-    apple: "/tabLogo.png",
+    icon: "/tabsLogo.png",
+    shortcut: "/tabsLogo.png",
+    apple: "/tabsLogo.png",
   },
   openGraph: {
     title: "Ronish Dua",
     images: [
       {
-        url: "/tabLogo.png",
+        url: "/tabsLogo.png",
         width: 1200,
         height: 630,
         alt: "Ronish Dua Logo",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ronish Dua",
-    images: ["/tabLogo.png"],
+    images: ["/tabsLogo.png"],
   },
 };
 
