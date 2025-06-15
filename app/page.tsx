@@ -15,7 +15,6 @@ import {
   Section,
 } from "./components/ResumeComponents";
 import { BackgroundOverlay } from "./components/BackgroundOverlay";
-import { useVisitorLocation } from "./hooks/useVisitorLocation";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,8 +22,6 @@ const inter = Inter({
 });
 
 export default function Home() {
-  const visitorLocation = useVisitorLocation();
-
   return (
     <>
       <BackgroundOverlay />
@@ -57,12 +54,6 @@ export default function Home() {
               ))}
             </footer>
           </Section>
-
-          {visitorLocation && (
-            <p className='opacity-50 text-xs'>
-              Last Visitor from {visitorLocation}
-            </p>
-          )}
         </div>
       </main>
     </>
