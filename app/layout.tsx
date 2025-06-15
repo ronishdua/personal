@@ -4,6 +4,11 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Ronish Dua",
+  icons: {
+    icon: "/tabLogo.png",
+    shortcut: "/tabLogo.png",
+    apple: "/tabLogo.png",
+  },
 };
 
 export default function RootLayout({
